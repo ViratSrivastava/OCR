@@ -21,6 +21,20 @@ To install the necessary dependencies, run the following command:
 pip install -r requirements.txt
 ```
 
+```
+## Folder Structure
+OCR-Project/
+│── data/                    # Dataset folder
+│   ├── train/               # Training images
+│   ├── val/                 # Validation images
+│   ├── labels/              # Labels for OCR
+│── weights/                 # Folder to store trained model weights
+│── nn.py                    # Model definition (CRNN)
+│── train.py                  # Training script
+│── utils.py                  # Helper functions
+│── requirements.txt          # Dependencies
+```
+
 ## Usage
 To use the OCR model, follow these steps:
 1. Clone the repository:
