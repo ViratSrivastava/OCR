@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader, Dataset
 import os
 import cv2
 import numpy as np
-from nn import CRNN  # Import your model
+from models.nn import CRNN  # Import your model
 
 # Define Dataset Class
 class OCRDataset(Dataset):
