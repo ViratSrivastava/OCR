@@ -1,2 +1,5 @@
 /data/text_recognition_dataset
+/data/mjsynth
 /ocr-venv
+/data/dataset
+/data/dataset_fixed
