@@ -40,11 +40,11 @@ class OCRNet(nn.Module):
 
     def forward(self, x):
         x = self.cnn(x)
-        x = x.squeeze(2)  # Remove height dimension
-        x = x.permute(0, 2, 1)  # Reshape for LSTM [batch, width, features]
+        x = x.squeeze(2)
+        x = x.permute(0, 2, 1)
         x, _ = self.lstm(x)
-        x = self.fc(x)  # Map to character classes
-        return x
+        x = self.fc(x)
+        return F.log_softmax(x, dim=2)  # CTC requires log probabilities
 
 # Example Usage
 num_classes = 128  # Adjust based on character set (ASCII, Unicode, etc.)
