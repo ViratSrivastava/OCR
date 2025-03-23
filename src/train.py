@@ -1,74 +1,59 @@
 import torch
-import torch.optim as optim
 import torch.nn as nn
-import torchvision.transforms as transforms
-from torch.utils.data import DataLoader, Dataset
-import os
-import cv2
-import numpy as np
-from models.nn import CRNN  # Import your model
+from torch.utils.data import DataLoader
+from src.data_processing.dataset import OCRDataset
+from src.models.nn_char_recog import OCRNet
+from src.utils import ctc_collate
+from src.init import char_to_index
+from pathlib import Path
 
-# Define Dataset Class
-class OCRDataset(Dataset):
-    def __init__(self, data_dir, transform=None):
-        self.data_dir = data_dir
-        self.transform = transform
-        self.image_files = [f for f in os.listdir(data_dir) if f.endswith(('.png', '.jpg', '.jpeg'))]
+# Config
+BATCH_SIZE = 32
+NUM_EPOCHS = 50
+LR = 0.0003
+# Updated CHARS to include all possible characters
+CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-    def __len__(self):
-        return len(self.image_files)
+# Prepare dataset
+train_dataset = OCRDataset('dataset', 'train', charset=char_to_index)
+train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE,
+                         shuffle=True, collate_fn=ctc_collate)
 
-    def __getitem__(self, idx):
-        img_path = os.path.join(self.data_dir, self.image_files[idx])
-        img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)  # Load as grayscale
-        img = cv2.resize(img, (128, 32))  # Resize for consistency
-        img = np.expand_dims(img, axis=0)  # Add channel dimension
-        img = torch.FloatTensor(img) / 255.0  # Normalize
+# Model setup
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model = OCRNet(num_classes=len(CHARS)+1).to(device)  # +1 for CTC blank
+criterion = nn.CTCLoss(blank=0)
+optimizer = torch.optim.Adam(model.parameters(), lr=LR)
 
-        label = self.image_files[idx].split('.')[0]  # Extract label from filename
-
-        return img, label
-
-# Define Training Function
-def train_model(data_path, epochs=10, batch_size=32, lr=0.001):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = CRNN(num_classes=37).to(device)
-    optimizer = optim.Adam(model.parameters(), lr=lr)
-    criterion = nn.CTCLoss()
-
-    transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.5,), (0.5,))
-    ])
-
-    train_dataset = OCRDataset(os.path.join(data_path, 'train'), transform)
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-
+# Training loop
+for epoch in range(NUM_EPOCHS):
     model.train()
-    for epoch in range(epochs):
-        total_loss = 0
-        for images, labels in train_loader:
-            images = images.to(device)
+    epoch_loss = 0
 
-            optimizer.zero_grad()
-            outputs = model(images)  # Forward pass
+    for batch in train_loader:
+        images, labels, label_lengths = batch
+        images = images.to(device)
 
-            # Compute loss (dummy target length for now)
-            target_lengths = torch.IntTensor([len(label) for label in labels])
-            log_probs = torch.nn.functional.log_softmax(outputs, dim=2)
-            input_lengths = torch.full((batch_size,), outputs.size(0), dtype=torch.int32)
-            loss = criterion(log_probs, labels, input_lengths, target_lengths)
+        # Forward pass
+        outputs = model(images)
+        input_lengths = torch.full((images.size(0),), outputs.size(1), dtype=torch.long)
 
-            loss.backward()
-            optimizer.step()
-            total_loss += loss.item()
+        # CTC Loss calculation
+        loss = criterion(
+            outputs.permute(1, 0, 2),  # (T, N, C)
+            labels.to(device),          # (N*S)
+            input_lengths,              # (N)
+            label_lengths               # (N)
+        )
 
-        print(f"Epoch {epoch+1}/{epochs}, Loss: {total_loss:.4f}")
+        # Backprop
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
 
-        # Save model after each epoch
-        torch.save(model.state_dict(), f'weights/ocr_epoch_{epoch+1}.pth')
+        epoch_loss += loss.item()
 
-    print("Training Completed. Model saved in weights/")
+    print(f'Epoch {epoch+1}/{NUM_EPOCHS} | Loss: {epoch_loss/len(train_loader):.4f}')
 
-if __name__ == "__main__":
-    train_model("data", epochs=10)
+# Save model
+torch.save(model.state_dict(), 'ocr_model.pth')
