@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 class OCRNet(nn.Module):
     def __init__(self, num_classes):
@@ -31,12 +30,15 @@ class OCRNet(nn.Module):
             nn.ReLU(),
             nn.MaxPool2d((2, 1)),  # -> [B, 512, 2, 32]
             
-            nn.Conv2d(512, 512, kernel_size=(2, 1), stride=1),  # -> [B, 512, 1, 32]
+            nn.Conv2d(512, 512, kernel_size=(2, 1), stride=1),       # -> [B, 512, 1, 32]
             nn.ReLU()
         )
         
+        # Linear layer to match LSTM input size
+        self.fc_pre_lstm = nn.Linear(512, 256)  # Adjusted to match LSTM input size
+        
         # Recurrent Layer (LSTM)
-        self.lstm = nn.LSTM(512, 256, bidirectional=True, batch_first=True)
+        self.lstm = nn.LSTM(256, 256, bidirectional=True, batch_first=False)  # Corrected LSTM initialization
         
         # Fully Connected Layer
         self.fc = nn.Linear(512, num_classes)  # 512 because bidirectional LSTM outputs 256*2
@@ -47,12 +49,15 @@ class OCRNet(nn.Module):
         
         # Prepare for LSTM
         x = x.squeeze(2)  # Remove height dimension -> [B, 512, 32]
-        x = x.permute(0, 2, 1)  # -> [B, 32, 512]
+        
+        # Linear layer to adjust feature dimension
+        x = x.permute(2, 0, 1)  # -> [T, B, 512]
+        x = self.fc_pre_lstm(x)  # -> [T, B, 256]
         
         # LSTM sequence processing
-        x, _ = self.lstm(x)  # -> [B, 32, 512]
+        x, _ = self.lstm(x)  # -> [T, B, 512] because bidirectional
         
         # Classification
-        x = self.fc(x)  # -> [B, 32, num_classes]
+        x = self.fc(x)  # -> [T, B, num_classes]
         
         return x  # Return logits, apply log_softmax in loss calculation
