@@ -1,0 +1,20 @@
+(venv) PS C:\Users\VIRAT\Projects\OCR> python -m src.data_processing.corrupt
+Collecting image paths...
+Found 8340105 images to check
+Checking images: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8340105/8340105 [1:17:35<00:00, 1791.41it/s]
+
+Found 13 corrupted images:
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\192_whittier_86389.jpg -> cannot identify image file 'C:\\Users\\VIRAT\\Projects\\OCR\\data\\dataset_fixed\\train\\images\\192_whittier_86389.jpg'
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\223_Diligently_21672.jpg -> Truncated File Read
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\225_Marbling_46673.jpg -> Truncated File Read
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\231_randoms_62372.jpg -> cannot identify image file 'C:\\Users\\VIRAT\\Projects\\OCR\\data\\dataset_fixed\\train\\images\\231_randoms_62372.jpg'
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\232_friar_30876.jpg -> cannot identify image file 'C:\\Users\\VIRAT\\Projects\\OCR\\data\\dataset_fixed\\train\\images\\232_friar_30876.jpg'
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\234_TRIASSIC_80582.jpg -> Truncated File Read
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\358_BURROWING_10395.jpg -> cannot identify image file 'C:\\Users\\VIRAT\\Projects\\OCR\\data\\dataset_fixed\\train\\images\\358_BURROWING_10395.jpg'
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\363_actuating_904.jpg -> cannot identify image file 'C:\\Users\\VIRAT\\Projects\\OCR\\data\\dataset_fixed\\train\\images\\363_actuating_904.jpg'
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\364_SNORTERS_72304.jpg -> cannot identify image file 'C:\\Users\\VIRAT\\Projects\\OCR\\data\\dataset_fixed\\train\\images\\364_SNORTERS_72304.jpg'
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\370_refract_63890.jpg -> Truncated File Read
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\81_MIDYEAR_48332.jpg -> Truncated File Read
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\train\images\96_hackle_34465.jpg -> Truncated File Read
+Corrupt image: C:\Users\VIRAT\Projects\OCR\data\dataset_fixed\val\images\221_snored_72290.jpg -> Truncated File Read
+(venv) PS C:\Users\VIRAT\Projects\OCR>
