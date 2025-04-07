@@ -6,3 +6,5 @@
 /venv
 *.pyc
 /wandb
+/data/IIIT5k
+/data/IIIT5k_fixed
