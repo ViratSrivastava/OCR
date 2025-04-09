@@ -1,0 +1,9 @@
+data/90kDICT32px/*
+/ocr-venv
+/venv
+*.pyc
+/wandb
+*.jpg
+*.jpeg
+mltu
+data
