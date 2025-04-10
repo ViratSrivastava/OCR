@@ -1,0 +1,3 @@
+model_path: Models/1_image_to_word/202504111940/model.h5
+vocab: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+input_shape: [32, 128, 1]
