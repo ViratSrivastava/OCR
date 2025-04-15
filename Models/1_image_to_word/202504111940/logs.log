@@ -1,0 +1,68 @@
+2025-04-11 19:58:48,694 - ImageReader - WARNING - Image data/90kDICT32px/173/2/358_BURROWING_10395.jpg could not be read, returning None.
+2025-04-11 19:58:48,694 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 19:58:48,694 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 20:00:28,190 - ImageReader - WARNING - Image data/90kDICT32px/275/6/96_hackle_34465.jpg could not be read, returning None.
+2025-04-11 20:00:28,190 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 20:00:28,190 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 20:06:40,918 - ImageReader - WARNING - Image data/90kDICT32px/1817/2/363_actuating_904.jpg could not be read, returning None.
+2025-04-11 20:06:40,918 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 20:06:40,918 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 20:16:03,066 - ImageReader - WARNING - Image data/90kDICT32px/495/6/81_MIDYEAR_48332.jpg could not be read, returning None.
+2025-04-11 20:16:03,066 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 20:16:03,066 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 20:19:25,174 - ImageReader - WARNING - Image data/90kDICT32px/2025/2/364_SNORTERS_72304.jpg could not be read, returning None.
+2025-04-11 20:19:25,174 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 20:19:25,174 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 20:35:45,143 - ImageReader - WARNING - Image data/90kDICT32px/1881/4/225_Marbling_46673.jpg could not be read, returning None.
+2025-04-11 20:35:45,143 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 20:35:45,143 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 21:51:56,999 - ImageReader - WARNING - Image data/90kDICT32px/368/4/232_friar_30876.jpg could not be read, returning None.
+2025-04-11 21:51:57,001 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 21:51:57,001 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 21:56:04,660 - ImageReader - WARNING - Image data/90kDICT32px/913/4/231_randoms_62372.jpg could not be read, returning None.
+2025-04-11 21:56:04,661 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 21:56:04,661 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 21:59:17,681 - ImageReader - WARNING - Image data/90kDICT32px/869/4/234_TRIASSIC_80582.jpg could not be read, returning None.
+2025-04-11 21:59:17,681 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 21:59:17,681 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 22:00:53,477 - ImageReader - WARNING - Image data/90kDICT32px/1863/4/223_Diligently_21672.jpg could not be read, returning None.
+2025-04-11 22:00:53,477 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 22:00:53,477 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 22:16:43,910 - ImageReader - WARNING - Image data/90kDICT32px/2069/4/192_whittier_86389.jpg could not be read, returning None.
+2025-04-11 22:16:43,910 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 22:16:43,910 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 22:38:33,742 - ImageReader - WARNING - Image data/90kDICT32px/2013/2/370_refract_63890.jpg could not be read, returning None.
+2025-04-11 22:38:33,743 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 22:38:33,743 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 23:16:22,546 - DataProvider - WARNING - Removing ['data/90kDICT32px/173/2/358_BURROWING_10395.jpg', 'BURROWING'] from dataset.
+2025-04-11 23:16:25,619 - DataProvider - WARNING - Removing ['data/90kDICT32px/275/6/96_hackle_34465.jpg', 'hackle'] from dataset.
+2025-04-11 23:16:27,662 - DataProvider - WARNING - Removing ['data/90kDICT32px/1817/2/363_actuating_904.jpg', 'actuating'] from dataset.
+2025-04-11 23:16:28,752 - DataProvider - WARNING - Removing ['data/90kDICT32px/495/6/81_MIDYEAR_48332.jpg', 'MIDYEAR'] from dataset.
+2025-04-11 23:16:29,647 - DataProvider - WARNING - Removing ['data/90kDICT32px/2025/2/364_SNORTERS_72304.jpg', 'SNORTERS'] from dataset.
+2025-04-11 23:16:31,675 - DataProvider - WARNING - Removing ['data/90kDICT32px/1881/4/225_Marbling_46673.jpg', 'Marbling'] from dataset.
+2025-04-11 23:16:32,520 - DataProvider - WARNING - Removing ['data/90kDICT32px/368/4/232_friar_30876.jpg', 'friar'] from dataset.
+2025-04-11 23:16:32,648 - DataProvider - WARNING - Removing ['data/90kDICT32px/913/4/231_randoms_62372.jpg', 'randoms'] from dataset.
+2025-04-11 23:16:33,680 - DataProvider - WARNING - Removing ['data/90kDICT32px/869/4/234_TRIASSIC_80582.jpg', 'TRIASSIC'] from dataset.
+2025-04-11 23:16:34,720 - DataProvider - WARNING - Removing ['data/90kDICT32px/1863/4/223_Diligently_21672.jpg', 'Diligently'] from dataset.
+2025-04-11 23:16:37,084 - DataProvider - WARNING - Removing ['data/90kDICT32px/2069/4/192_whittier_86389.jpg', 'whittier'] from dataset.
+2025-04-11 23:16:39,996 - DataProvider - WARNING - Removing ['data/90kDICT32px/2013/2/370_refract_63890.jpg', 'refract'] from dataset.
+2025-04-11 23:31:45,244 - ImageReader - WARNING - Image data/90kDICT32px/2489/4/221_snored_72290.jpg could not be read, returning None.
+2025-04-11 23:31:45,244 - DataProvider - WARNING - Data or annotation is None, marking for removal on epoch end.
+2025-04-11 23:31:45,248 - DataProvider - WARNING - Data or annotation is None, skipping.
+2025-04-11 23:36:09,421 - DataProvider - WARNING - Removing ['data/90kDICT32px/2489/4/221_snored_72290.jpg', 'snored'] from dataset.
+2025-04-11 23:36:12,134 - root - INFO - Epoch 0; loss: 32.527835845947266; CER: 1.028045415878296; WER: 0.9999998807907104; val_loss: 21.753116607666016; val_CER: 0.8822833299636841; val_WER: 0.9999925494194031
+2025-04-12 03:34:56,139 - root - INFO - Epoch 1; loss: 11.521780014038086; CER: 0.40013790130615234; WER: 0.8240860104560852; val_loss: 5.707313537597656; val_CER: 0.1907109022140503; val_WER: 0.5172940492630005
+2025-04-12 07:23:58,680 - root - INFO - Epoch 2; loss: 6.897731781005859; CER: 0.23450784385204315; WER: 0.623275876045227; val_loss: 5.074170112609863; val_CER: 0.17451781034469604; val_WER: 0.4659232795238495
+2025-04-12 11:34:45,387 - root - INFO - Epoch 3; loss: 6.434401035308838; CER: 0.22003750503063202; WER: 0.5897282958030701; val_loss: 4.536684989929199; val_CER: 0.15539635717868805; val_WER: 0.42558857798576355
+2025-04-12 16:00:06,769 - root - INFO - Epoch 4; loss: 5.330191135406494; CER: 0.18390725553035736; WER: 0.5096266865730286; val_loss: 3.663654327392578; val_CER: 0.126645028591156; val_WER: 0.34423401951789856
+2025-04-12 20:35:48,151 - root - INFO - Epoch 5; loss: 4.45167350769043; CER: 0.15503376722335815; WER: 0.43542203307151794; val_loss: 3.2279279232025146; val_CER: 0.11276356875896454; val_WER: 0.30664244294166565
+2025-04-13 00:27:12,318 - root - INFO - Epoch 6; loss: 4.021679878234863; CER: 0.14096708595752716; WER: 0.39750033617019653; val_loss: 2.9989848136901855; val_CER: 0.10527176409959793; val_WER: 0.2850125730037689
+2025-04-13 04:31:22,484 - root - INFO - Epoch 7; loss: 3.7572567462921143; CER: 0.13223758339881897; WER: 0.3738076984882355; val_loss: 2.99214243888855; val_CER: 0.10630570352077484; val_WER: 0.2797567844390869
+2025-04-13 08:56:15,509 - root - INFO - Epoch 8; loss: 3.5742907524108887; CER: 0.12626419961452484; WER: 0.35723140835762024; val_loss: 2.7385618686676025; val_CER: 0.09624157845973969; val_WER: 0.25957199931144714
+2025-04-08 13:34:11,521 - root - INFO - Epoch 9; loss: 3.437169075012207; CER: 0.12177568674087524; WER: 0.34503528475761414; val_loss: 2.6577653884887695; val_CER: 0.09439828991889954; val_WER: 0.25390633940696716
+2025-04-13 17:58:32,801 - root - INFO - Epoch 10; loss: 3.330472707748413; CER: 0.11831710487604141; WER: 0.33560073375701904; val_loss: 2.549302339553833; val_CER: 0.09083373099565506; val_WER: 0.24458692967891693
+2025-04-13 21:57:25,145 - root - INFO - Epoch 11; loss: 3.242706298828125; CER: 0.11544249206781387; WER: 0.3277187645435333; val_loss: 2.4842188358306885; val_CER: 0.08978477865457535; val_WER: 0.24308331310749054
+2025-04-14 01:49:48,886 - root - INFO - Epoch 12; loss: 3.170384645462036; CER: 0.11308106780052185; WER: 0.3212887942790985; val_loss: 2.4156417846679688; val_CER: 0.08713474869728088; val_WER: 0.23543818295001984
+2025-04-14 05:48:08,535 - root - INFO - Epoch 13; loss: 3.108196496963501; CER: 0.11107499152421951; WER: 0.31547048687934875; val_loss: 2.4056124687194824; val_CER: 0.08615806698799133; val_WER: 0.2294374406337738
+2025-04-14 09:51:16,931 - root - INFO - Epoch 14; loss: 3.056781053543091; CER: 0.1094016432762146; WER: 0.3107210099697113; val_loss: 2.3505496978759766; val_CER: 0.0845208615064621; val_WER: 0.2261723428964615
+2025-04-14 14:12:15,246 - root - INFO - Epoch 15; loss: 3.008903741836548; CER: 0.10781026631593704; WER: 0.3062148690223694; val_loss: 2.301649570465088; val_CER: 0.08315212279558182; val_WER: 0.22437846660614014
